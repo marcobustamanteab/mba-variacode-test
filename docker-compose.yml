@@ -14,9 +14,9 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root #reemplazar por variable de entorno de .env no olvidarrrrrrrrrrrrrrrr
-      MYSQL_DATABASE: flask_db #reemplazar por variable de entorno de .env
-      MYSQL_ROOT_HOST: '%' #allow host access
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE} 
+      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST} #allow host access
     command: --default-authentication-plugin=mysql_native_password #native authentication
     volumes:
       - mysql_data:/var/lib/mysql
@@ -24,4 +24,4 @@ services:
       - "3306:3306"
 
 volumes:
-  mysql_data:
+  mysql_data: {} 
