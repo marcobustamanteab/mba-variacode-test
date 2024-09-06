@@ -1,0 +1,11 @@
+#enviroment
+.env
+venv
+
+
+#pycache
+__pycache__
+
+#readme
+README.md
+
